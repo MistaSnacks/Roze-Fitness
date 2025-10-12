@@ -169,9 +169,14 @@ body {
 .app__phone img { width: 100%; border-radius: 32px; box-shadow: 0 14px 40px rgba(0,0,0,.2); }
 
 .about { background: #5a6568; }
-.about__media { min-height: 60vh; background: none; }
+.about__media { min-height: 60vh; background: var(--ink) center/cover no-repeat; position: relative; }
 .about__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.about__media::after { display: none; }
+.about__media::after { 
+  content: "";
+  position: absolute; 
+  inset: 0 0 0 40%;
+  background: linear-gradient(90deg, rgba(90,101,104,0.0) 0%, rgba(90,101,104,0.9) 90%);
+}
 .about__content h2 { font-size: clamp(32px, 5vw, 64px); line-height: 1.1; margin: 0 0 24px; text-transform: uppercase; color: #fff; }
 
 /* Footer */
