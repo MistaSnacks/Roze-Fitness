@@ -90,3 +90,14 @@
   color: var(--rose); 
   font-weight: 900; 
 }
+
+/* Responsive navigation menu */
+.nav-menu {
+  display: none;
+}
+
+@media (min-width: 920px) {
+  .nav-menu {
+    display: flex;
+  }
+}

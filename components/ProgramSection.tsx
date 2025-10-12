@@ -13,9 +13,11 @@ export default function ProgramSection({ title, features, bgImage, variant = 'si
       <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[80vh] items-stretch">
         {/* Media panel with gradient overlay */}
         <div 
-          className="relative min-h-[60vh] md:min-h-[80vh] bg-[var(--ink)] bg-center bg-cover bg-no-repeat after:content-[''] after:absolute after:inset-y-0 after:left-[40%] after:right-0 after:bg-[linear-gradient(90deg,rgba(255,255,255,0.0)_0%,rgba(255,255,255,0.9)_90%)]"
+          className="relative min-h-[60vh] md:min-h-[80vh] bg-[#2b3436] bg-center bg-cover bg-no-repeat"
           style={{ backgroundImage: `url(${bgImage})` }}
-        />
+        >
+          <div className="absolute inset-y-0 left-[40%] right-0 bg-gradient-to-r from-transparent to-[rgba(252,253,253,0.9)]" />
+        </div>
         
         {/* Content panel */}
         <div className="bg-[#fcfdfd] text-[#1f2a2d] px-[8vw] py-[46px] flex flex-col justify-center">

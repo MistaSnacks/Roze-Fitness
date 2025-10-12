@@ -6,9 +6,11 @@ export default function AboutSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[80vh] items-stretch">
         {/* Media panel with gradient overlay */}
         <div 
-          className="relative min-h-[60vh] md:min-h-[80vh] bg-[var(--ink)] bg-center bg-cover bg-no-repeat after:content-[''] after:absolute after:inset-y-0 after:left-[40%] after:right-0 after:bg-[linear-gradient(90deg,rgba(90,101,104,0.0)_0%,rgba(90,101,104,1)_90%)]"
+          className="relative min-h-[60vh] md:min-h-[80vh] bg-[#2b3436] bg-center bg-cover bg-no-repeat"
           style={{ backgroundImage: `url(https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop)` }}
-        />
+        >
+          <div className="absolute inset-y-0 left-[40%] right-0 bg-gradient-to-r from-transparent to-[#5a6568]" />
+        </div>
         
         {/* Content panel */}
         <div className="bg-[#5a6568] text-[#e8edef] px-[8vw] py-[46px] flex flex-col justify-center">
