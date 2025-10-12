@@ -153,6 +153,8 @@ body {
   background-image: var(--bg);
   min-height: 50vh;
   position: relative;
+  /* Ensure consistent visual proportions on mobile/tablet */
+  aspect-ratio: 16 / 9;
 }
 .program__media::after, .pillars__media::after, .about__media::after {
   content: "";
@@ -191,7 +193,8 @@ body {
   .menu { display: flex; }
   .results__grid { grid-template-columns: 1.1fr 1fr 1.1fr; }
   .program, .pillars, .about { grid-template-columns: 1fr 1fr; min-height: 80vh; }
-  .program__media, .pillars__media, .about__media { min-height: unset; }
+  /* Match media panel height across all split sections */
+  .program__media, .pillars__media, .about__media { min-height: 80vh; aspect-ratio: auto; }
   .app__grid { grid-template-columns: 0.9fr 1.1fr; }
 }
 
