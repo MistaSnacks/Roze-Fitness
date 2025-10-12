@@ -136,8 +136,8 @@ body {
 .quote-card small { opacity: .7; display: inline-block; margin-bottom: 14px; }
 
 /* Side media sections */
-.program { margin: 0; }
-.program__group, .pillars, .about { display: grid; grid-template-columns: 1fr; }
+.program, .pillars, .about { margin: 0; }
+.program__group, .pillars__group, .about__group { display: grid; grid-template-columns: 1fr; }
 .program__media, .pillars__media, .about__media {
   background: var(--ink) center/cover no-repeat;
   background-image: var(--bg);
@@ -156,7 +156,6 @@ body {
 .highlight { color: var(--rose); font-weight: 900; }
 .program__content ul { line-height: 1.7; }
 
-.pillars { margin-top: 40px; }
 .pillars__media::after { inset: 0 0 0 45%; }
 .list-large { font-size: clamp(18px, 2.5vw, 28px); font-weight: 800; }
 
@@ -189,7 +188,7 @@ body {
 @media (min-width: 920px) {
   .menu { display: flex; }
   .results__grid { grid-template-columns: 1.1fr 1fr 1.1fr; }
-  .program__group, .pillars, .about { grid-template-columns: 1fr 1fr; min-height: 80vh; }
+  .program__group, .pillars__group, .about__group { grid-template-columns: 1fr 1fr; min-height: 80vh; }
   .program__media, .pillars__media, .about__media { min-height: unset; }
   .app__grid { grid-template-columns: 0.9fr 1.1fr; }
 }
