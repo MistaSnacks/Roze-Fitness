@@ -86,7 +86,6 @@ body {
 }
 .hero__headline .outline { color: transparent; -webkit-text-stroke: 1px #3d4a4d; text-stroke: 1px #3d4a4d; }
 .hero__subline { font-size: clamp(16px, 2vw, 22px); font-weight: 500; margin: 1.5rem 0 2.5rem; opacity: .95; }
-.btn--hero { padding: 16px 64px; font-size: clamp(14px, 1.5vw, 18px); letter-spacing: 1.5px; }
 
 /* Chevron decorations */
 .hero__chevrons { position: absolute; color: rgba(255,255,255,0.5); z-index: 1; }
