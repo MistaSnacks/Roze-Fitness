@@ -1,0 +1,96 @@
+---
+alwaysApply: true
+------
+alwaysApply: true
+---### Website Build Do’s and Don’ts
+
+#### Do
+- Design System
+  - Always use the project’s fonts, themes, and structures when creating new sections.
+  - Use design tokens and shared theme files (e.g., `src/theme/colors.ts`, `src/theme/typography.ts`).
+  - Reuse components from `src/components/ui` and shared layout (`Header`, `Footer`, `Layout`).
+  - Keep visual and interaction uniformity across pages (spacing scale, typography scale, button styles).
+
+- Workflow
+  - Use Playwright MCP when adding a new feature, page, or design change.
+  - Start with a quick mockup (then implement), and review scope before building.
+  - Create an issue with clear scope and acceptance criteria before coding.
+  - Develop on a feature branch; use Conventional Commits (e.g., `feat:`, `fix:`); open a PR early.
+
+- Content & CMS
+  - Use WordPress API calls when structuring content after the initial mockup.
+  - Model content types first; avoid hard‑coded content—source from WordPress or config.
+  - Use environment variables for API keys/URLs; manage secrets outside the repo.
+
+- Quality & UX
+  - Follow core web design principles (visual hierarchy, contrast, rhythm, whitespace).
+  - Implement responsive behavior; test at common breakpoints and on real devices.
+  - Provide clear empty states, loading states, and error states.
+
+- Accessibility
+  - Meet WCAG 2.1 AA: semantic HTML, labels, ARIA only when necessary.
+  - Ensure keyboard navigation, visible focus styles, and sufficient color contrast.
+  - Provide alt text for images and meaningful link text.
+
+- Performance & SEO
+  - Optimize images (prefer `next/image`), lazy‑load heavy content, and code‑split where appropriate.
+  - Set meta tags, canonical URLs, Open Graph/Twitter tags; add structured data when relevant.
+  - Keep to performance budgets (LCP, CLS, TBT); measure in CI or pre‑release.
+
+- Testing & QA
+  - Add/maintain unit tests and Playwright e2e tests for new features.
+  - Include regression tests for fixed bugs to prevent reintroductions.
+  - Verify tracking/analytics events where required.
+
+- Security & Privacy
+  - Never commit secrets; rotate credentials if exposure is suspected.
+  - Sanitize and validate inputs; use HTTPS endpoints; follow least‑privilege access.
+  - Respect privacy settings and consent for analytics/cookies.
+
+- Collaboration & Docs
+  - Keep `README.md` and relevant docs (e.g., `MIGRATION_GUIDE.md`) up to date.
+  - Document new commands, scripts, environment variables, and config changes.
+  - Request reviews, address feedback promptly, and link PRs to issues.
+
+- Release & Ops
+  - Use preview deployments for review; verify key flows before merging.
+  - Maintain a CHANGELOG or clear release notes.
+  - Run a post‑release checklist (errors, metrics, SEO, accessibility spot check).
+
+#### Don’t
+- Scope & Process
+  - Don’t change things unless it’s within the current scope/issue.
+  - Don’t blindly create a feature without confirming feasibility and alignment.
+  - Don’t blindly fix something until we’ve confirmed the troubleshooting is correct.
+  - Don’t reuse code from a failed implementation without fixing the root cause.
+
+- Version Control
+  - Don’t auto‑commit or push directly to `main`.
+  - Don’t bypass code review, tests, or CI checks.
+  - Don’t commit generated files, large binaries, or local environment files.
+
+- Code & Architecture
+  - Don’t hard‑code content that belongs in WordPress or configuration.
+  - Don’t introduce breaking changes to shared components without a migration plan.
+  - Don’t mix ad‑hoc inline styles when utilities/Tailwind or components exist.
+  - Don’t introduce new libraries without discussing impact and maintenance.
+
+- Quality & UX
+  - Don’t ship unoptimized images, unused assets, or blocking third‑party scripts.
+  - Don’t degrade accessibility to ship faster.
+  - Don’t ignore performance budgets or obvious layout shifts.
+
+- Security & Privacy
+  - Don’t commit secrets or tokens; don’t log sensitive user data.
+  - Don’t expose admin endpoints or rely on client‑side validation alone.
+
+#### Definition of Done (quick checklist)
+- Design system used; uniform spacing/typography; components reused.
+- Content sourced via WordPress/API where applicable; no hard‑coded CMS data.
+- Tests updated/added (unit + Playwright); CI green.
+- Accessibility basics verified (labels, focus, contrast, keyboard nav).
+- Performance checked (images optimized, no obvious LCP/CLS regressions).
+- SEO/meta set; analytics verified (if applicable).
+- Docs updated; PR linked to issue; reviewed and approved.
+
+

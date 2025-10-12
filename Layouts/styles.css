@@ -152,7 +152,7 @@ body {
 .program__content ul { line-height: 1.7; }
 .program + .program { border-top-left-radius: var(--radius-xl); border-top-right-radius: var(--radius-xl); overflow: hidden; }
 
-.pillars { margin-top: 40px; }
+.pillars { margin-top: 0; }
 .pillars__media::after { inset: 0 0 0 45%; }
 .list-large { font-size: clamp(18px, 2.5vw, 28px); font-weight: 800; }
 
