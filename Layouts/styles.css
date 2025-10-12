@@ -167,7 +167,7 @@ body {
 .program + .program { border-top-left-radius: var(--radius-xl); border-top-right-radius: var(--radius-xl); overflow: hidden; }
 
 .pillars { margin-top: 0; }
-.pillars__media::after { inset: 0 0 0 45%; }
+.pillars__media::after { inset: 0 0 0 35%; }
 .list-large { font-size: clamp(18px, 2.5vw, 28px); font-weight: 800; }
 
 .app { background: #f4f7f8; color: #243033; padding: 64px 0; position: relative; }
@@ -181,7 +181,7 @@ body {
 .app__grid { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; }
 .app__phone img { width: 100%; border-radius: 32px; box-shadow: 0 14px 40px rgba(0,0,0,.2); }
 
-.about__media::after { inset: 0 0 0 40%; }
+.about__media::after { inset: 0 0 0 35%; }
 
 /* Footer */
 .site-footer { background: #202628; color: #c7d1d4; padding: 24px 0; text-align: center; }
