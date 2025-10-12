@@ -1,3 +1,14 @@
+/* Local fonts */
+@font-face {
+  font-family: "PanoTrial";
+  src: url("/fonts/HW%20Pano%20Trial%20Bold.woff2") format("woff2"),
+       url("/fonts/HW%20Pano%20Trial%20Bold.woff") format("woff"),
+       url("/fonts/HW%20Pano%20Trial%20Bold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Design tokens */
 :root {
   --pink: #f5a9b8;
@@ -71,6 +82,7 @@ body {
 }
 .hero__content { padding-top: 14vh; padding-bottom: 24vh; }
 .hero__headline { font-size: clamp(40px, 6vw, 92px); line-height: .95; margin: 0 0 12px; font-weight: 900; text-transform: uppercase; }
+.hero__headline, .section-title, .program__content h3, .brand { font-family: PanoTrial, Montserrat, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; }
 .hero__headline .outline { color: transparent; -webkit-text-stroke: 1px #3d4a4d; text-stroke: 1px #3d4a4d; }
 .hero__sub { max-width: 58ch; color: #4a585b; font-weight: 500; }
 
