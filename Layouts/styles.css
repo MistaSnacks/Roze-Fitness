@@ -148,7 +148,7 @@ body {
 }
 .program__content, .pillars__content { background: #fcfdfd; color: #1f2a2d; padding: 46px 8vw; }
 .about__content { background: #5a6568; color: #e8edef; padding: 46px 8vw; }
-.program__content h3 { margin: 0 0 12px; font-size: clamp(28px, 4.6vw, 72px); line-height: 1; text-transform: uppercase; }
+.program__content h3 { margin: 0 0 12px; font-size: 52px; line-height: 1; text-transform: uppercase; }
 .muted { color: #6a7679; font-weight: 700; }
 .highlight { color: var(--rose); font-weight: 900; }
 .program__content ul { line-height: 1.7; }
