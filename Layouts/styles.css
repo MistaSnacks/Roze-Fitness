@@ -114,22 +114,8 @@ body {
 .section-title { text-align: center; font-size: clamp(28px, 5vw, 72px); margin: 64px 0 28px; text-transform: uppercase; }
 .section-title .outline { color: transparent; -webkit-text-stroke: 1px #E8FF3B; text-stroke: 1px #E8FF3B; }
 
-.results { background: linear-gradient(180deg, #2f383b, #232a2c); padding: 40px 0 64px; position: relative; }
+.results { background: linear-gradient(180deg, #2f383b, #232a2c); padding: 40px 0 64px; }
 .section--diagonal-top { position: relative; }
-
-/* Carousel */
-.carousel { position: relative; margin: 48px 0; }
-.carousel__track-container { overflow: hidden; }
-.carousel__track { display: flex; transition: transform 0.5s ease-in-out; }
-.carousel__slide { min-width: 100%; }
-.carousel__nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s ease; }
-.carousel__nav:hover { background: rgba(255,255,255,0.25); transform: translateY(-50%) scale(1.05); }
-.carousel__nav--prev { left: -28px; }
-.carousel__nav--next { right: -28px; }
-.carousel__indicators { display: flex; justify-content: center; gap: 12px; margin-top: 32px; }
-.carousel__indicator { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.3); border: none; cursor: pointer; transition: all 0.3s ease; }
-.carousel__indicator:hover { background: rgba(255,255,255,0.5); transform: scale(1.2); }
-.carousel__indicator.active { background: var(--pink); width: 32px; border-radius: 6px; }
 .section--diagonal-top::before {
   content: "";
   position: absolute;
@@ -153,8 +139,6 @@ body {
   background-image: var(--bg);
   min-height: 50vh;
   position: relative;
-  /* Ensure consistent visual proportions on mobile/tablet */
-  aspect-ratio: 16 / 9;
 }
 .program__media::after, .pillars__media::after, .about__media::after {
   content: "";
@@ -168,8 +152,8 @@ body {
 .program__content ul { line-height: 1.7; }
 .program + .program { border-top-left-radius: var(--radius-xl); border-top-right-radius: var(--radius-xl); overflow: hidden; }
 
-.pillars { margin-top: 0; }
-.pillars__media::after { inset: 0 0 0 35%; }
+.pillars { margin-top: 40px; }
+.pillars__media::after { inset: 0 0 0 45%; }
 .list-large { font-size: clamp(18px, 2.5vw, 28px); font-weight: 800; }
 
 .app { background: #f4f7f8; color: #243033; padding: 64px 0; position: relative; }
@@ -183,7 +167,7 @@ body {
 .app__grid { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; }
 .app__phone img { width: 100%; border-radius: 32px; box-shadow: 0 14px 40px rgba(0,0,0,.2); }
 
-.about__media::after { inset: 0 0 0 35%; }
+.about__media::after { inset: 0 0 0 40%; }
 
 /* Footer */
 .site-footer { background: #202628; color: #c7d1d4; padding: 24px 0; text-align: center; }
@@ -192,8 +176,9 @@ body {
 @media (min-width: 920px) {
   .menu { display: flex; }
   .results__grid { grid-template-columns: 1.1fr 1fr 1.1fr; }
-  .program, .pillars, .about { grid-template-columns: 1fr 1fr; min-height: 80vh; align-items: start; }
-  /* Lock media panel height so long text doesn't stretch it */
-  .program__media, .pillars__media, .about__media { height: 80vh; min-height: 0; aspect-ratio: auto; align-self: start; }
+  .program, .pillars, .about { grid-template-columns: 1fr 1fr; min-height: 80vh; }
+  .program__media, .pillars__media, .about__media { min-height: unset; }
   .app__grid { grid-template-columns: 0.9fr 1.1fr; }
 }
+
+
