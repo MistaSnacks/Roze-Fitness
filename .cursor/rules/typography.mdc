@@ -1,0 +1,84 @@
+---
+description: Typography rules for Roze Fitness site
+globs: Layouts/styles.css
+alwaysApply: true
+---
+# Typography Guidelines
+
+## Font Families
+
+### Primary Heading Font: Pano Bold Trial
+All headings (h1-h6) and display text MUST use **Pano Bold Trial** (PanoTrial).
+
+**Applied to:**
+- `.hero__headline` - Hero section headlines
+- `.section-title` - Section titles
+- `.program__content h3` - Program section headings
+- `.pillars__content h2` - Pillars section headings
+- `.about__content h2` - About section headings
+- `.brand` - Site logo/branding
+- `h1, h2, h3, h4, h5, h6` - All semantic heading elements
+
+**Font stack:**
+```css
+font-family: PanoTrial, Montserrat, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+```
+
+**Font files location:**
+```
+public/fonts/
+├── HW Pano Trial Bold.woff2
+├── HW Pano Trial Bold.woff
+└── HW Pano Trial Bold.otf
+```
+
+### Body Font: Montserrat
+Body text uses Montserrat with system font fallbacks.
+
+## Font Sizes
+
+### Fixed Sizes (52px)
+These elements use a fixed 52px font size:
+- `.hero__headline` - Hero headline
+- `.program__content h3` - Program section headers
+
+### Responsive Sizes
+Other headings use `clamp()` for responsive sizing:
+- `.section-title`: `clamp(28px, 5vw, 72px)`
+- `.about__content h2`: `clamp(32px, 5vw, 64px)`
+
+## Color Palette
+
+### Brand Colors
+- **Primary/Accent**: `#E8FF3B` (lime green) - used for highlights
+- **Secondary**: `#E8FF3B` (same as primary)
+
+### Text Colors
+- **Light sections**: `#1f2a2d` (dark gray)
+- **Dark sections**: `#e8edef` (light gray) or `#fff` (white)
+- **Muted text**: `#6a7679`
+
+## Example Usage
+
+```css
+/* Good - All headings use PanoTrial */
+.new-section h2 {
+  font-family: PanoTrial, Montserrat, system-ui;
+  font-size: clamp(32px, 5vw, 64px);
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* Bad - Missing PanoTrial font */
+.new-section h2 {
+  font-family: Arial, sans-serif;
+}
+```
+
+## Rules
+1. ✅ ALWAYS use PanoTrial for all headings and display text
+2. ✅ Maintain the full font-family stack with fallbacks
+3. ✅ Use 52px for hero and program headers
+4. ✅ Use clamp() for responsive section headings
+5. ❌ NEVER use system fonts alone for headings
+6. ❌ NEVER remove PanoTrial from the font stack

@@ -80,7 +80,10 @@ body {
 .hero__eyebrow { font-size: clamp(14px, 1.5vw, 18px); font-weight: 400; margin: 0 0 1rem; opacity: .9; letter-spacing: 0.5px; }
 .hero__headline { font-size: 52px; line-height: .95; margin: 0; font-weight: 900; text-transform: uppercase; display: flex; flex-direction: column; gap: 4px; }
 .hero__headline--large span { display: block; }
-.hero__headline, .section-title, .program__content h3, .brand { font-family: PanoTrial, Montserrat, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; }
+/* All headings use Pano Bold Trial */
+.hero__headline, .section-title, .program__content h3, .pillars__content h2, .about__content h2, .brand, h1, h2, h3, h4, h5, h6 { 
+  font-family: PanoTrial, Montserrat, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; 
+}
 .hero__headline .outline { color: transparent; -webkit-text-stroke: 1px #3d4a4d; text-stroke: 1px #3d4a4d; }
 .hero__subline { font-size: clamp(16px, 2vw, 22px); font-weight: 500; margin: 1.5rem 0 2.5rem; opacity: .95; }
 .btn--hero { padding: 16px 64px; font-size: clamp(14px, 1.5vw, 18px); letter-spacing: 1.5px; }
