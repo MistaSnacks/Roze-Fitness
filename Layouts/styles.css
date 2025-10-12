@@ -11,8 +11,8 @@
 
 /* Design tokens */
 :root {
-  --pink: #f5a9b8;
-  --rose: #ffb7c5;
+  --pink: #E8FF3B;
+  --rose: #E8FF3B;
   --ink: #2b3436;
   --ink-2: #3b4547;
   --bg: #fcfdfd;
@@ -112,7 +112,7 @@ body {
 
 /* Sections */
 .section-title { text-align: center; font-size: clamp(28px, 5vw, 72px); margin: 64px 0 28px; text-transform: uppercase; }
-.section-title .outline { color: transparent; -webkit-text-stroke: 1px #ffb7c5; text-stroke: 1px #ffb7c5; }
+.section-title .outline { color: transparent; -webkit-text-stroke: 1px #E8FF3B; text-stroke: 1px #E8FF3B; }
 
 .results { background: linear-gradient(180deg, #2f383b, #232a2c); padding: 40px 0 64px; }
 .section--diagonal-top { position: relative; }
