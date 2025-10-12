@@ -192,12 +192,8 @@ body {
 @media (min-width: 920px) {
   .menu { display: flex; }
   .results__grid { grid-template-columns: 1.1fr 1fr 1.1fr; }
-  .program, .pillars, .about { grid-template-columns: 1fr 1fr; min-height: 80vh; }
-  /* Match media panel height across all split sections */
-  .program__media, .pillars__media, .about__media { height: 80vh; min-height: 80vh; aspect-ratio: auto; }
-  /* Vertically center content so it doesn't stretch sections unevenly */
-  .program__content, .pillars__content, .about__content { display: flex; flex-direction: column; justify-content: center; }
+  .program, .pillars, .about { grid-template-columns: 1fr 1fr; min-height: 80vh; align-items: start; }
+  /* Lock media panel height so long text doesn't stretch it */
+  .program__media, .pillars__media, .about__media { height: 80vh; min-height: 0; aspect-ratio: auto; align-self: start; }
   .app__grid { grid-template-columns: 0.9fr 1.1fr; }
 }
-
-
