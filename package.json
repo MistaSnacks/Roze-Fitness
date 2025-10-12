@@ -1,0 +1,25 @@
+{
+  "name": "roze-fitness-2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MistaSnacks/Roze-Fitness.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MistaSnacks/Roze-Fitness/issues"
+  },
+  "homepage": "https://github.com/MistaSnacks/Roze-Fitness#readme",
+  "description": "",
+  "devDependencies": {
+    "vite": "^7.1.9"
+  }
+}
