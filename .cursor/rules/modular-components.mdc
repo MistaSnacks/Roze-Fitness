@@ -1,0 +1,179 @@
+---
+description: Guidelines for creating modular, reusable CSS components
+globs: Layouts/styles.css
+alwaysApply: true
+---
+# Modular Component Guidelines
+
+## Component Architecture
+
+All UI components MUST follow a modular, reusable architecture using BEM (Block Element Modifier) naming convention.
+
+### BEM Structure
+
+```
+.block { /* Base component styles */ }
+.block__element { /* Child element styles */ }
+.block--modifier { /* Variant styles */ }
+```
+
+## Core Principles
+
+### 1. Base + Modifier Pattern
+Components should use a base class with minimal default styles, then modifiers to adjust specific variants.
+
+**Good:**
+```css
+/* Base button with minimal defaults */
+.btn { 
+  display: inline-block; 
+  padding: 12px 24px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+/* Modifier for specific variant */
+.btn--hero { 
+  padding: 14px 48px;
+  letter-spacing: 1px;
+}
+
+/* Color modifiers */
+.btn--primary { background: var(--pink); color: #222; }
+.btn--outline { border: 2px solid #2a3638; background: transparent; }
+```
+
+**Bad:**
+```css
+/* Base button with too many specific styles */
+.btn { 
+  padding: 12px 40px; /* Too specific - hard to override */
+  font-size: 16px; /* Forces all buttons to be same size */
+}
+```
+
+### 2. Avoid Style Conflicts
+Modifiers should cleanly override base styles without conflicts.
+
+**Good:**
+```html
+<a class="btn btn--primary btn--hero">Click Me</a>
+<!-- Both modifiers apply cleanly -->
+```
+
+**Bad:**
+```css
+.btn { padding: 12px 40px; }
+.btn--hero { padding: 14px 48px; } /* Conflicts with base padding */
+```
+
+### 3. Single Responsibility
+Each class should have ONE clear purpose.
+
+**Good:**
+```css
+.btn { /* Structure & layout */ }
+.btn--primary { /* Color/theme */ }
+.btn--hero { /* Size variant */ }
+```
+
+**Bad:**
+```css
+.btn--primary-hero { /* Mixing concerns */ }
+```
+
+## Component Patterns
+
+### Buttons
+```css
+/* Base */
+.btn { 
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 800;
+  border-radius: 8px;
+  transition: transform .15s ease;
+}
+
+/* Size modifiers */
+.btn--sm { padding: 8px 16px; font-size: 12px; }
+.btn--hero { padding: 14px 48px; letter-spacing: 1px; }
+
+/* Color modifiers */
+.btn--primary { background: var(--pink); color: #222; }
+.btn--outline { border: 2px solid; background: transparent; }
+```
+
+### Section Layout
+```css
+/* Base section */
+.section { margin: 0; }
+.section__group { display: grid; grid-template-columns: 1fr; }
+.section__media { min-height: 60vh; position: relative; }
+.section__content { padding: 46px 8vw; }
+
+/* Variants */
+.section--dark .section__content { background: #5a6568; color: #fff; }
+.section--light .section__content { background: #fcfdfd; color: #1f2a2d; }
+```
+
+## Rules
+
+1. ✅ **ALWAYS** use BEM naming (block__element, block--modifier)
+2. ✅ **ALWAYS** keep base classes minimal and generic
+3. ✅ **ALWAYS** use modifiers for variants (colors, sizes, states)
+4. ✅ **ALWAYS** test that modifiers override base styles properly
+5. ❌ **NEVER** put specific variant styles in base classes
+6. ❌ **NEVER** create style conflicts between base and modifiers
+7. ❌ **NEVER** mix concerns in a single class (e.g., size + color)
+
+## Testing Modularity
+
+Before committing a component, verify:
+
+1. **Can it be reused?** - Base class works in multiple contexts
+2. **Are modifiers independent?** - Can combine multiple modifiers
+3. **No conflicts?** - Modifiers cleanly override base styles
+4. **Single responsibility?** - Each class has one clear purpose
+
+## Example: Refactoring Non-Modular to Modular
+
+**Before (Non-modular):**
+```css
+.hero-button { 
+  padding: 14px 48px; 
+  background: #E8FF3B; 
+  font-size: 14px;
+}
+.program-button { 
+  padding: 14px 48px; 
+  border: 2px solid #2a3638;
+  font-size: 14px;
+}
+/* Duplicated styles! */
+```
+
+**After (Modular):**
+```css
+.btn { 
+  padding: 12px 24px; 
+  font-size: 14px; 
+}
+.btn--hero { 
+  padding: 14px 48px; 
+}
+.btn--primary { 
+  background: #E8FF3B; 
+}
+.btn--outline { 
+  border: 2px solid #2a3638; 
+}
+/* Reusable, composable! */
+```
+
+```html
+<!-- Usage -->
+<a class="btn btn--primary btn--hero">Hero CTA</a>
+<a class="btn btn--outline btn--hero">Program CTA</a>
+```
