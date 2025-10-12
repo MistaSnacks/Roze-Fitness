@@ -52,7 +52,10 @@
   padding: 12px 24px; 
   border-radius: 8px; 
   transition: transform .15s ease, opacity .2s ease; 
-  font-size: 14px; 
+  font-size: 14px;
+  white-space: nowrap;
+  text-align: center;
+  width: auto;
 }
 .btn:hover { 
   transform: translateY(-1px); 
